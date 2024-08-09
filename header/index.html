@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Styles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 30%;
+            height: auto;
+        }
+        header.classic { background-color: #f8f9fa; }
+        header.modern { background-color: #e0e0e0; }
+        header.plain { background-color: transparent; box-shadow: none; }
+        header.stack-left { justify-content: flex-start; }
+        header.stack-center { justify-content: center; }
+        header.stack-right { justify-content: flex-end; }
+        header.fixed { position: fixed; top: 0; width: 100%; background-color: #333; color: #fff; }
+        header.creative-right { background-color: #ff5733; justify-content: flex-start; }
+        header.empty { background-color: transparent; box-shadow: none; height: 30px; }
+        header.transparent { background-color: rgba(255, 255, 255, 0.5); }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .nav {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav li {
+            margin-left: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showHeader('classic')">Classic</a></li>
+            <li><a href="#" onclick="showHeader('modern')">Modern</a></li>
+            <li><a href="#" onclick="showHeader('plain')">Plain</a></li>
+            <li><a href="#" onclick="showHeader('stack-left')">Stack Left</a></li>
+            <li><a href="#" onclick="showHeader('stack-center')">Stack Center</a></li>
+            <li><a href="#" onclick="showHeader('stack-right')">Stack Right</a></li>
+            <li><a href="#" onclick="showHeader('fixed')">Fixed</a></li>
+            <li><a href="#" onclick="showHeader('creative-right')">Creative Right</a></li>
+            <li><a href="#" onclick="showHeader('empty')">Empty</a></li>
+            <li><a href="#" onclick="showHeader('transparent')">Transparent</a></li>
+        </ul>
+    </nav>
+    
+    <header id="header" class="classic">
+        <div class="logo">LOGO</div>
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <img id="header-image" src="dark.jpg" alt="Header Image">
+    </header>
+    
+    <script>
+        function showHeader(headerType) {
+            const header = document.getElementById('header');
+            const headerImage = document.getElementById('header-image');
+            
+            // Remove all existing classes from the header
+            header.className = '';
+            
+            // Add the selected header type as a class
+            header.classList.add(headerType);
+            
+            // Update the image source based on the selected header type
+            switch(headerType) {
+                case 'classic':
+                    headerImage.src = 'dark.jpg';
+                    break;
+                case 'modern':
+                    headerImage.src = 'dark.jpg';
+                    break;
+                case 'plain':
+                    headerImage.src = 'dark.jpg';
+                    break;
+                case 'stack-left':
+                    headerImage.src = 'dark.jpg';
+                    break;
+                case 'stack-center':
+                    headerImage.src = 'dark.jpg';
+                    break;
+                case 'stack-right':
+                    headerImage.src = 'dark.jpg';
+                    break;
+                case 'fixed':
+                    headerImage.src = 'dark.jpg';
+                    break;
+                case 'creative-right':
+                    headerImage.src = 'dark.jpg';
+                    break;
+                case 'empty':
+                    headerImage.src = 'dark.jpg';
+                    break;
+                case 'transparent':
+                    headerImage.src = 'dark.jpg';
+                    break;
+                default:
+                    headerImage.src ='dark.jpg ';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
